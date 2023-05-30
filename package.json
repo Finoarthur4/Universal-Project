@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "react-bootstrap": "^2.7.4",
+    "utf8": "^3.0.0"
+  },
+  "homepage": "https://finoarthur4.github.io",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "finoarthur4.github.io -b master -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}
