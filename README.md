@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Documentation
+## Projects
+### Cone Calculator ( CEUCCC )
+*Thinking: Hopefully this guy won't notice that i can't speak english very well.*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This calculator is at the moment **only for straight circular cones!**
+It is enough to enter 2 values to calculate all data of the cone.
+Unfortunately, there are some exceptions.
 
-## Available Scripts
+But first the explanations of the symbols:
+#### Explanation of the symbols
+- **r** is the radius.
+- **h** is the height.
+- **s** is the length of the mantellinie.
+- **d** is the durchmesser.
+- **a<sub>g</sub> (a_g)** is the fächeninhalt of the grundfläche.
+- **a<sub>m</sub> (a_m)** is the flächeninhalt of the mantel.
+- **a<sub>o</sub> (a_o)** is the flächeninhalt of the whole oberfläche.
+- **V** is the volumen.
+- **U<sub>g</sub> (U_g)** is the Umfang of the grundfläche.
+- **φ** is the half opening winkel.
 
-In the project directory, you can run:
+But now to the exceptions:
+#### Exceptions
+First the cases where tow values are given but aren't enough to calculate:
+- r and a<sub>g</sub>
+- h and a<sub>m</sub>
+- h and a<sub>o</sub>
+- a<sub>o</sub> and V.
 
-### `npm start`
+Of course some things also can't work. These are:
+r can't be something else than d/2 or bigger than s. Because of the Satz von Pyhtagoras. Because of this h also can't be bigger than s. 
+Furthermore the Volumen can't be bigger than a<sub>g</sub> or a<sub>m</sub> if one of this values is bigger than 1. 
+Even more no value which you type in can't be smaller or be 0.
+#### Genesis
+This program was created in the course of a project of the Computer Science Physics course to circumvent the problems of accurate calculation, as well as the bugging interface and other problems of Scratch.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Demo
+A demo is worth than a thousand words. 
+[Demo](https://raw.githack.com/finoarthur4/Universal-Project/main/public/index.html)
