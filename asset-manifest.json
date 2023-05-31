@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Universal-Project/static/css/main.bc1dca3e.css",
+    "main.js": "/Universal-Project/static/js/main.7f5a50bd.js",
+    "static/js/787.7efd31bd.chunk.js": "/Universal-Project/static/js/787.7efd31bd.chunk.js",
+    "static/media/cone.png": "/Universal-Project/static/media/cone.ea1358deb6eec6417b7d.png",
+    "index.html": "/Universal-Project/index.html",
+    "main.bc1dca3e.css.map": "/Universal-Project/static/css/main.bc1dca3e.css.map",
+    "main.7f5a50bd.js.map": "/Universal-Project/static/js/main.7f5a50bd.js.map",
+    "787.7efd31bd.chunk.js.map": "/Universal-Project/static/js/787.7efd31bd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc1dca3e.css",
+    "static/js/main.7f5a50bd.js"
+  ]
+}
