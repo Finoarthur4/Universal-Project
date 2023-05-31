@@ -38,4 +38,3 @@ This program was created in the course of a project of the Computer Science Phys
 # Demo
 A demo is worth than a thousand words. 
 [Demo](https://finoarthur4.github.io/Universal-Project/)
-?
