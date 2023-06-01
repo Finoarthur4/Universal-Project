@@ -1039,7 +1039,7 @@ export default function Form() {
               <br></br>
               But now to the <b>exceptions</b>:
               <br></br>
-              <h3>Exceptions</h3>
+              <h2>Exceptions:</h2>
               <br></br>
               First the cases where to values are given but aren't enough to calculate:
               <br></br>
