@@ -1,6 +1,7 @@
 # Documentation
 ## Projects
 ### Cone Calculator ( CEUCCC )
+(**C**ompletely **E**xaggerated **U**nnecessary **C**omplicated **C**one **C**alculator)
 *Thinking: Hopefully this guy won't notice that i can't speak english very well.*
 
 This calculator is at the moment **only for straight circular cones!**
