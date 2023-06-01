@@ -2,9 +2,7 @@ import { useState, useContext } from 'react';
 import { BytetoInteger } from './BytetoInteger';
 //import { UTF8toByte } from './UTF8toByte';
 //import { AscIItoText } from './AscIItoText';
-
 import React from 'react';
-import cone from './cone.png'; // Tell webpack this JS file uses this image
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,7 +12,10 @@ import 'react-toastify/dist/ReactToastify.css';
 //If you wwant to push it via VSC you must copy it into "Scripts"
 //It is better to push via Git Extensions, because of several back-ups
 
+import cone from './cone.png'; // Tell webpack this JS file uses this image
+
 export default function Form() {
+  //cone
   const [r, setR] = useState(0);
   const [h, setH] = useState(0);
   const [s, setS] = useState(0);
@@ -850,39 +851,24 @@ export default function Form() {
         var _d = (2*_r);
         setD(_d);
         console.log(`_d = ${_d}`);
-        console.log("ConeCaserd");
-        ConeCaserd(_r, _d);
       }
       if (a_g == null || a_g == 0 || isNaN(a_g) == true) {
         var _a_g = (_r*_r*Math.PI);
         setA_G(_a_g);
         console.log(`_a_g = ${_a_g}`);
-        console.log("ConeCasera_g");
-        ConeCasera_g(_r, _a_g);
       }
       if (U_g == null || U_g == 0 || isNaN(U_g) == true) {
         var _U_g = (2*Math.PI*_r);
         setU_G(_U_g);
         console.log(`_U_g = ${_U_g}`);
-        console.log("ConeCaserU_g");
-        ConeCaserU_g(_r, _U_g);
-        setImpossible(true);
-        toast.error("That isn't possible! rtfm!")
       }
+      toast.error("That isn't possible! rtfm!");
     }
     function ConeCaseh(_h) {
-      setImpossible(true);
-      toast.error("That isn't possible! rtfm!")
-      if (isNaN(r) == true || isNaN(h) == true || isNaN(s) == true || isNaN(d) == true || isNaN(a_g) == true || isNaN(a_m) == true || isNaN(a_o) == true || isNaN(V) == true || isNaN(U_g) == true || isNaN(hoa) == true) {
-        toast.error("One of the results is not a real number")
-      }
+      toast.error("That isn't possible! rtfm!");
     }
     function ConeCases(_s) {
-      setImpossible(true);
-      toast.error("That isn't possible! rtfm!")
-      if (isNaN(r) == true || isNaN(h) == true || isNaN(s) == true || isNaN(d) == true || isNaN(a_g) == true || isNaN(a_m) == true || isNaN(a_o) == true || isNaN(V) == true || isNaN(U_g) == true || isNaN(hoa) == true) {
-        toast.error("One of the results is not a real number")
-      }
+      toast.error("That isn't possible! rtfm!");
     }
     function ConeCased(_d) {
       if (r == null || r == 0 || isNaN(r) == true) {
@@ -903,25 +889,13 @@ export default function Form() {
       }
     }
     function ConeCasea_m(_a_m) {
-      setImpossible(true);
-      toast.error("That isn't possible! rtfm!")
-      if (isNaN(r) == true || isNaN(h) == true || isNaN(s) == true || isNaN(d) == true || isNaN(a_g) == true || isNaN(a_m) == true || isNaN(a_o) == true || isNaN(V) == true || isNaN(U_g) == true || isNaN(hoa) == true) {
-        toast.error("One of the results is not a real number")
-      }
+      toast.error("That isn't possible! rtfm!");
     }
     function ConeCasea_o(_a_o) {
-      setImpossible(true);
-      toast.error("That isn't possible! rtfm!")
-      if (isNaN(r) == true || isNaN(h) == true || isNaN(s) == true || isNaN(d) == true || isNaN(a_g) == true || isNaN(a_m) == true || isNaN(a_o) == true || isNaN(V) == true || isNaN(U_g) == true || isNaN(hoa) == true) {
-        toast.error("One of the results is not a real number")
-      }
+      toast.error("That isn't possible! rtfm!");
     }
     function ConeCaseV(_V) {
-      setImpossible(true);
-      toast.error("That isn't possible! rtfm!")
-      if (isNaN(r) == true || isNaN(h) == true || isNaN(s) == true || isNaN(d) == true || isNaN(a_g) == true || isNaN(a_m) == true || isNaN(a_o) == true || isNaN(V) == true || isNaN(U_g) == true || isNaN(hoa) == true) {
-        toast.error("One of the results is not a real number")
-      }
+      toast.error("That isn't possible! rtfm!");
     }
     function ConeCaseU_g(_U_g) {
       if (r == null || r == 0 || isNaN(r) == true) {
@@ -933,10 +907,7 @@ export default function Form() {
       }
     }
     function ConeCasehoa(_hoa) {
-      toast.error("That isn't possible! rtfm!")
-      if (isNaN(r) == true || isNaN(h) == true || isNaN(s) == true || isNaN(d) == true || isNaN(a_g) == true || isNaN(a_m) == true || isNaN(a_o) == true || isNaN(V) == true || isNaN(U_g) == true || isNaN(hoa) == true) {
-        toast.error("One of the results is not a real number")
-      }
+      toast.error("That isn't possible! rtfm!");
     }
 
   }
