@@ -171,11 +171,7 @@ export default function Form() {
           ConeCaserh(r, h);
         } else {
           if (s > 0) {
-            if ((r*r) >= (s*s)) {
-              setImpossible(true);
-            } else {
-              ConeCasers(r, s);
-            }                  
+            ConeCasers(r, s);                 
           } else {
             if (d > 0) {
                 ConeCaserd(r, d);
@@ -392,8 +388,6 @@ export default function Form() {
         }
       }
     }
-
-    //cases
 
     //r case
     function ConeCaserh(_r, _h) {
