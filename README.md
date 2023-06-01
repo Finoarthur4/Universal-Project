@@ -36,16 +36,16 @@ Of course some things also can't work. These are:
 - At least 2 Values must be bigger than 0. 
 - If only value is given, the values are calculated which are possible with 1 value.
 - The values must fit to this formeln and it's ableitungen:
-r = sqrt(s²-h²)
-h = sqrt(s²-r²)
-s = sqrt(h²+r²)
-d = 2*r
-a<sub>g</sub> = r² * PI
-a<sub>m</sub> = r * s * PI
-a<sub>o</sub> = a<sub>g</sub> + a<sub>m</sub> = r * PI * (r + s)
-V = 1/3 * PI * r² * h = 1/3 * a<sub>g</sub> * h
-U<sub>g</sub> = 2 * PI * r
-φ = arcsin(r/s) = arctan(r/h)
+1. r = sqrt(s²-h²)
+2. h = sqrt(s²-r²)
+3. s = sqrt(h²+r²)
+4. d = 2*r
+5. a<sub>g</sub> = r² * PI
+6. a<sub>m</sub> = r * s * PI
+7. a<sub>o</sub> = a<sub>g</sub> + a<sub>m</sub> = r * PI * (r + s)
+8. V = 1/3 * PI * r² * h = 1/3 * a<sub>g</sub> * h
+9. U<sub>g</sub> = 2 * PI * r
+10. φ = arcsin(r/s) = arctan(r/h)
 
 #### Genesis
 This program was created in the course of a project of the Computer Science Physics course to circumvent the problems of accurate calculation, as well as the bugging interface and other problems of Scratch.

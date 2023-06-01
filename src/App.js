@@ -16,17 +16,16 @@ import cone from './cone.png'; // Tell webpack this JS file uses this image
 
 export default function Form() {
   //cone
-  const [r, setR] = useState(0);
-  const [h, setH] = useState(0);
-  const [s, setS] = useState(0);
-  const [d, setD] = useState(0);
-  const [a_g, setA_G] = useState(0);
-  const [a_m, setA_M] = useState(0);
-  const [a_o, setA_O] = useState(0);
-  const [V, setV] = useState(0);
-  const [U_g, setU_G] = useState(0);
-  const [hoa, setHOA] = useState(0);
-  const [impossible, setImpossible] = useState(false);
+  const [Coner, setConeR] = useState(0);
+  const [Coneh, setConeH] = useState(0);
+  const [Cones, setConeS] = useState(0);
+  const [Coned, setConeD] = useState(0);
+  const [Conea_g, setConeA_G] = useState(0);
+  const [Conea_m, setConeA_M] = useState(0);
+  const [Conea_o, setConeA_O] = useState(0);
+  const [ConeV, setConeV] = useState(0);
+  const [ConeU_g, setConeU_G] = useState(0);
+  const [Conehoa, setConeHOA] = useState(0);
 
   const [extratext, setExtratext] = useState("");
   const [k, setK] = useState(0);
@@ -134,69 +133,101 @@ export default function Form() {
 
   function coneCalculationCase() {
     setImpossible(false);
-    if (isNaN(r) == true) {
-      setR(0);
+    if (isNaN(Coner) == true) {
+      setConeR(0);
     }
-    if (isNaN(h) == true) {
-      setH(0);
+    if (isNaN(Coneh) == true) {
+      setConeH(0);
     }
-    if (isNaN(s) == true) {
-      setS(0);
+    if (isNaN(Cones) == true) {
+      setConeS(0);
     }
-    if (isNaN(d) == true) {
-      setD(0);
+    if (isNaN(Coned) == true) {
+      setConeD(0);
     }
-    if (isNaN(a_g) == true) {
-      setA_G(0);
+    if (isNaN(Conea_g) == true) {
+      setConeA_G(0);
     }
-    if (isNaN(a_m) == true) {
-      setA_M(0);
+    if (isNaN(Conea_m) == true) {
+      setConeA_M(0);
     }
-    if (isNaN(a_o) == true) {
-      setA_O(0);
+    if (isNaN(Conea_o) == true) {
+      setConeA_O(0);
     }
-    if (isNaN(V) == true) {
-      setV(0);
+    if (isNaN(ConeV) == true) {
+      setConeV(0);
     }
-    if (isNaN(U_g) == true) {
-      setU_G(0);
+    if (isNaN(ConeU_g) == true) {
+      setConeU_G(0);
     }
-    if (isNaN(hoa) == true) {
-      setHOA(0);
+    if (isNaN(Conehoa) == true) {
+      setConeHOA(0);
     }
-    if (impossible == true) {
-      setImpossible(true);
-    } else {
-      if (r > 0) {
-        if (h > 0) {
-          ConeCaserh(r, h);
+    if (Coner > 0) {
+      if (Coneh > 0) {
+        ConeCaserh(Coner, Coneh);
+      } else {
+        if (Cones > 0) {
+          ConeCasers(Coner, Cones);                 
         } else {
-          if (s > 0) {
-            ConeCasers(r, s);                 
+          if (Coned > 0) {
+              ConeCaserd(Coner, Coned);
           } else {
-            if (d > 0) {
-                ConeCaserd(r, d);
+            if (Conea_g > 0) {
+              ConeCasera_g(Coner, Conea_g);
             } else {
-              if (a_g > 0) {
-                ConeCasera_g(r, a_g);
+              if (Conea_m > 0) {
+                ConeCasera_m(Coner, Conea_m);
               } else {
-                if (a_m > 0) {
-                  ConeCasera_m(r, a_m);
+                if (Conea_o > 0) {
+                  ConeCasera_o(Coner, Conea_o);
                 } else {
-                  if (a_o > 0) {
-                    ConeCasera_o(r, a_o);
+                  if (ConeV > 0) {
+                    ConeCaserV(Coner, ConeV);
                   } else {
-                    if (V > 0) {
-                      ConeCaserV(r, V);
+                    if (ConeU_g > 0) {
+                      ConeCaserU_g(Coner, ConeU_g);
                     } else {
-                      if (U_g > 0) {
-                        ConeCaserU_g(r, U_g);
+                      if (Conehoa > 0) {
+                        ConeCaserhoa(Coner, Conehoa);
                       } else {
-                        if (hoa > 0) {
-                          ConeCaserhoa(r, hoa);
-                        } else {
-                          ConeCaser(r);
-                        }
+                        ConeCaser(Coner);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    } else {
+      if (Coneh > 0) {
+        if (Cones > 0) {
+          ConeCasehs(Coneh, Cones);
+        } else {
+          if (Coned > 0) {
+            ConeCasehd(Coneh, Coned);
+          } else {
+            if (Conea_g > 0) {
+              ConeCaseha_g(Coneh, Conea_g);
+            } else {
+              if (Conea_m > 0) {
+                ConeCaseha_m(Coneh, Conea_m);
+              } else {
+                if (Conea_o > 0) {
+                  ConeCaseha_o(Coneh, Conea_o);
+                } else {
+                  if (ConeV > 0) {
+                    ConeCasehV(Coneh, ConeV);
+                  } else {
+                    if (ConeU_g > 0) {
+                      ConeCasehU_g(Coneh, ConeU_g);
+                    } else {
+                      if (Conehoa > 0) {
+                        ConeCasehhoa(Coneh, Conehoa);
+                      } else {
+                        ConeCaseh(Coneh);
                       }
                     }
                   }
@@ -206,33 +237,29 @@ export default function Form() {
           }
         }
       } else {
-        if (h > 0) {
-          if (s > 0) {
-            ConeCasehs(h, s);
+        if (Cones > 0) {
+          if (Coned > 0) {
+            ConeCasesd(Cones, Coned);
           } else {
-            if (d > 0) {
-              ConeCasehd(h, d);
+            if (Conea_g > 0) {
+              ConeCasesa_g(Cones, Conea_g);
             } else {
-              if (a_g > 0) {
-                ConeCaseha_g(h, a_g);
+              if (Conea_m > 0) {
+                ConeCasesa_m(Cones, Conea_m);
               } else {
-                if (a_m > 0) {
-                  ConeCaseha_m(h, a_m);
+                if (Conea_o > 0) {
+                  ConeCasesa_o(Cones, Conea_o);
                 } else {
-                  if (a_o > 0) {
-                    ConeCaseha_o(h, a_o);
+                  if (ConeV > 0) {
+                    ConeCasesV(Cones, ConeV);
                   } else {
-                    if (V > 0) {
-                      ConeCasehV(h, V);
+                    if (ConeU_g > 0) {
+                      ConeCasesU_g(Cones, ConeU_g);
                     } else {
-                      if (U_g > 0) {
-                        ConeCasehU_g(h, U_g);
+                      if (Conehoa > 0) {
+                        ConeCaseshoa(Cones, Conehoa);
                       } else {
-                        if (hoa > 0) {
-                          ConeCasehhoa(h, hoa);
-                        } else {
-                          ConeCaseh(h);
-                        }
+                        ConeCases(Cones);
                       }
                     }
                   }
@@ -241,30 +268,26 @@ export default function Form() {
             }
           }
         } else {
-          if (s > 0) {
-            if (d > 0) {
-              ConeCasesd(s, d);
+          if (Coned > 0) {
+            if (Conea_g > 0) {
+              ConeCaseda_g(Coned, Conea_g);
             } else {
-              if (a_g > 0) {
-                ConeCasesa_g(s, a_g);
+              if (Conea_m > 0) {
+                ConeCaseda_m(Coned, Conea_m);
               } else {
-                if (a_m > 0) {
-                  ConeCasesa_m(s, a_m);
+                if (Conea_o > 0) {
+                  ConeCaseda_o(Coned, Conea_o);
                 } else {
-                  if (a_o > 0) {
-                    ConeCasesa_o(s, a_o);
+                  if (ConeV > 0) {
+                    ConeCasedV(Coned, ConeV);
                   } else {
-                    if (V > 0) {
-                      ConeCasesV(s, V);
+                    if (ConeU_g > 0) {
+                      ConeCasedU_g(Coned, ConeU_g);
                     } else {
-                      if (U_g > 0) {
-                        ConeCasesU_g(s, U_g);
+                      if (Conehoa > 0) {
+                        ConeCasedhoa(Coned, Conehoa);
                       } else {
-                        if (hoa > 0) {
-                          ConeCaseshoa(s, hoa);
-                        } else {
-                          ConeCases(s);
-                        }
+                        ConeCased(Coned);
                       }
                     }
                   }
@@ -272,113 +295,85 @@ export default function Form() {
               }
             }
           } else {
-            if (d > 0) {
-              if (a_g > 0) {
-                ConeCaseda_g(d, a_g);
+            if (Conea_g > 0) {
+              if (Conea_m > 0) {
+                ConeCasea_ga_m(Conea_g, Conea_m);
               } else {
-                if (a_m > 0) {
-                  ConeCaseda_m(d, a_m);
+                if (Conea_o > 0) {
+                  ConeCasea_ga_o(Conea_g, Conea_o);
                 } else {
-                  if (a_o > 0) {
-                    ConeCaseda_o(d, a_o);
+                  if (ConeV > 0) {
+                    ConeCasea_gV(Conea_g, ConeV);
                   } else {
-                    if (V > 0) {
-                      ConeCasedV(d, V);
+                    if (ConeU_g > 0) {
+                      ConeCasea_gU_g(Conea_g, ConeU_g);
                     } else {
-                      if (U_g > 0) {
-                        ConeCasedU_g(d, U_g);
+                      if (Conehoa > 0) {
+                        ConeCasea_ghoa(Conea_g, Conehoa);
                       } else {
-                        if (hoa > 0) {
-                          ConeCasedhoa(d, hoa);
-                        } else {
-                          ConeCased(d);
-                        }
+                        ConeCasea_g(Conea_g);
                       }
                     }
                   }
                 }
               }
             } else {
-              if (a_g > 0) {
-                if (a_m > 0) {
-                  ConeCasea_ga_m(a_g, a_m);
+              if (Conea_m > 0) {
+                if (Conea_o > 0) {
+                  ConeCasea_ma_o(Conea_m, Conea_o);
                 } else {
-                  if (a_o > 0) {
-                    ConeCasea_ga_o(a_g, a_o);
+                  if (ConeV > 0) {
+                    ConeCasea_mV(Conea_m, ConeV);
                   } else {
-                    if (V > 0) {
-                      ConeCasea_gV(a_g, V);
+                    if (ConeU_g > 0) {
+                      ConeCasea_mU_g(Conea_m, ConeU_g);
                     } else {
-                      if (U_g > 0) {
-                        ConeCasea_gU_g(a_g, U_g);
+                      if (Conehoa > 0) {
+                        ConeCasea_mhoa(Conea_m, Conehoa);
                       } else {
-                        if (hoa > 0) {
-                          ConeCasea_ghoa(a_g, hoa);
-                        } else {
-                          ConeCasea_g(a_g);
-                        }
+                        ConeCasea_m(Conea_m);
                       }
                     }
                   }
                 }
               } else {
-                if (a_m > 0) {
-                  if (a_o > 0) {
-                    ConeCasea_ma_o(a_m, a_o);
+                if (Conea_o > 0) {
+                  if (ConeV > 0) {
+                    ConeCasea_oV(Conea_o, ConeV);
                   } else {
-                    if (V > 0) {
-                      ConeCasea_mV(a_m, V);
+                    if (ConeU_g > 0) {
+                      ConeCasea_oU_g(Conea_o, ConeU_g);
                     } else {
-                      if (U_g > 0) {
-                        ConeCasea_mU_g(a_m, U_g);
+                      if (Conehoa > 0) {
+                        ConeCasea_ohoa(Conea_o, Conehoa);
                       } else {
-                        if (hoa > 0) {
-                          ConeCasea_mhoa(a_m, hoa);
-                        } else {
-                          ConeCasea_m(a_m);
-                        }
+                        ConeCasea_o(Conea_o);
                       }
                     }
                   }
                 } else {
-                  if (a_o > 0) {
-                    if (V > 0) {
-                      ConeCasea_oV(a_o, V);
+                  if (ConeV > 0) {
+                    if (ConeU_g > 0) {
+                      ConeCaseVU_g()
                     } else {
-                      if (U_g > 0) {
-                        ConeCasea_oU_g(a_o, U_g);
+                      if (Cone > 0) {
+                        ConeCaseVhoa(ConeV, Conehoa);
                       } else {
-                        if (hoa > 0) {
-                          ConeCasea_ohoa(a_o, hoa);
-                        } else {
-                          ConeCasea_o(a_o);
-                        }
+                        ConeCaseV(ConeV);
                       }
                     }
                   } else {
-                    if (V > 0) {
-                      if (U_g > 0) {
-                        ConeCaseVU_g()
+                    if (ConeU_g > 0) {
+                      if (Conehoa > 0) {
+                        ConeCaseU_ghoa(ConeU_g, Conehoa);
                       } else {
-                        if (hoa > 0) {
-                          ConeCaseVhoa(V, hoa);
-                        } else {
-                          ConeCaseV(V);
-                        }
+                        ConeCaseU_g(ConeU_g);
                       }
                     } else {
-                      if (U_g > 0) {
-                        if (hoa > 0) {
-                          ConeCaseU_ghoa(U_g, hoa);
-                        } else {
-                          ConeCaseU_g(U_g);
-                        }
+                      if (Conehoa > 0) {
+                        ConeCasehoa(Conehoa);
                       } else {
-                        if (hoa > 0) {
-                          ConeCasehoa(hoa);
-                        } else {
-                          setImpossible(true);
-                        }
+                        toast.error("That isn't possible! rtfm!");
                       }
                     }
                   }
@@ -391,540 +386,536 @@ export default function Form() {
     }
 
     //r case
-    function ConeCaserh(_r, _h) {
-      setR(_r);
-      setH(_h);
-      if (s == null || s == 0 || isNaN(s) == true) {
-        var _s = (Math.sqrt(_h*_h+_r*_r));
-        setS(_s);
-        console.log(`_s = ${_s}`);
+    function ConeCaserh(_Coner, _Coneh) {
+      setConeR(_Coner);
+      setConeH(_Coneh);
+      if (Cones == null || Cones == 0 || isNaN(Cones) == true) {
+        var _Cones = (Math.sqrt(_Coneh*_Coneh+_Coner*_Coner));
+        setConeS(_Cones);
+        console.log(`_Cones = ${_Cones}`);
       }
-      if (d == null || d == 0 || isNaN(d) == true) {
-        var _d = (2*_r);
-        setD(_d);
-        console.log(`_d = ${_d}`);
+      if (Coned == null || Coned == 0 || isNaN(Coned) == true) {
+        var _Coned = (2*_Coner);
+        setConeD(_Coned);
+        console.log(`_Coned = ${_Coned}`);
       }
-      if (a_g == null || a_g == 0 || isNaN(a_g) == true) {
-        var _a_g = (_r*_r*Math.PI);
-        setA_G(_a_g);
-        console.log(`_a_g = ${_a_g}`);
+      if (Conea_g == null || Conea_g == 0 || isNaN(Conea_g) == true) {
+        var _Conea_g = (_Coner*_Coner*Math.PI);
+        setConeA_G(_Conea_g);
+        console.log(`_Conea_g = ${_Conea_g}`);
       }
-      if (a_m == null || a_m == 0 || isNaN(a_m) == true) {
-        var _a_m = (_r*_s*Math.PI);
-        setA_M(_a_m);
-        console.log(`_a_m = ${_a_m}`);
+      if (Conea_m == null || Conea_m == 0 || isNaN(Conea_m) == true) {
+        var _Conea_m = (_Coner*_Cones*Math.PI);
+        setConeA_M(_Conea_m);
+        console.log(`_Conea_m = ${_Conea_m}`);
       }
-      if (a_o == null || a_o == 0 || isNaN(a_o) == true) {
-        var _a_o = (_a_g+_a_m);
-        setA_O(_a_o);
-        console.log(`_a_o = ${_a_o}`);
+      if (Conea_o == null || Conea_o == 0 || isNaN(Conea_o) == true) {
+        var _Conea_o = (_Conea_g+_Conea_m);
+        setConeA_O(_Conea_o);
+        console.log(`_Conea_o = ${_Conea_o}`);
       }
-      if (V == null || V == 0 || isNaN(V) == true) {
-        var _V = ((1/3)*_a_g*_h);
-        setV(_V);
-        console.log(`_V = ${_V}`);
+      if (ConeV == null || ConeV == 0 || isNaN(ConeV) == true) {
+        var _ConeV = ((1/3)*_Conea_g*_Coneh);
+        setConeV(_ConeV);
+        console.log(`_ConeV = ${_ConeV}`);
       }
-      if (U_g == null || U_g == 0 || isNaN(U_g) == true) {
-        var _U_g = (2*Math.PI*_r);
-        setU_G(_U_g);
-        console.log(`_U_g = ${_U_g}`);
+      if (ConeU_g == null || ConeU_g == 0 || isNaN(ConeU_g) == true) {
+        var _ConeU_g = (2*Math.PI*_Coner);
+        setConeU_G(_ConeU_g);
+        console.log(`_ConeU_g = ${_ConeU_g}`);
       }
-      if (hoa == null || hoa == 0 || isNaN(hoa) == true) {
-        var _hoa = (Math.atan(_r/_h));
-        setHOA(_hoa);
-        console.log(`_hoa = ${_hoa}`);
+      if (Conehoa == null || Conehoa == 0 || isNaN(Conehoa) == true) {
+        var _Conehoa = (Math.atan(_Coner/_Coneh));
+        setConeHOA(_Conehoa);
+        console.log(`_Conehoa = ${_Conehoa}`);
       }
-      if (isNaN(r) == true || isNaN(h) == true || isNaN(s) == true || isNaN(d) == true || isNaN(a_g) == true || isNaN(a_m) == true || isNaN(a_o) == true || isNaN(V) == true || isNaN(U_g) == true || isNaN(hoa) == true) {
+      if (isNaN(Coner) == true || isNaN(Coneh) == true || isNaN(Cones) == true || isNaN(Coned) == true || isNaN(Conea_g) == true || isNaN(Conea_m) == true || isNaN(Conea_o) == true || isNaN(ConeV) == true || isNaN(ConeU_g) == true || isNaN(Conehoa) == true) {
         toast.error("That isn't possible! rtfm!");
         toast.error("One of the results is not a real number");
       }
-      if (_r != Math.sqrt(_s*_s-_h*_h) || _h != Math.sqrt(_s*_s-_r*_r) || _s != Math.sqrt(_h*_h+_r*_r) || _d != (2*_r) || _a_g != (_r*_r*Math.PI) || _a_m != (_r*_s*Math.PI) || _a_o != (_a_g+_r*_r) || _V != ((1/3)*_a_g*_h) || _U_g != (2*Math.PI*_r) || _hoa != Math.asin(r/s)) {
+      if (_Coner != Math.sqrt(_Cones*_Cones-_Coneh*_Coneh) || _Coneh != Math.sqrt(_Cones*_Cones-_Coner*_Coner) || _Cones != Math.sqrt(_Coneh*_Coneh+_Coner*_Coner) || _Coned != (2*_Coner) || _Conea_g != (_Coner*_Coner*Math.PI) || _Conea_m != (_Coner*_Cones*Math.PI) || _Conea_o != (_Conea_g+_Coner*_Coner) || _ConeV != ((1/3)*_Conea_g*_Coneh) || _ConeU_g != (2*Math.PI*_Coner) || _Conehoa != Math.asin(r/s)) {
         toast.error("The values don't fit to the formeln!");
       }
     }
-    function ConeCasers(_r, _s) {
-      if (h == null || h == 0 || isNaN(h) == true) {
-        var _h = (Math.sqrt((_s*_s-_r*_r)));
-        setH(_h)
-        console.log(`_h = ${_h}`);
+    function ConeCasers(_Coner, _Cones) {
+      if (Coneh == null || Coneh == 0 || isNaN(Coneh) == true) {
+        var _Coneh = (Math.sqrt((_Cones*_Cones-_Coner*_Coner)));
+        setConeH(_Coneh)
+        console.log(`_Coneh = ${_Coneh}`);
       }
       console.log("ConeCaserh");
-      ConeCaserh(_r, _h);
+      ConeCaserh(_Coner, _Coneh);
     }
-    function ConeCaserd(_r, _d) {
+    function ConeCaserd(_Coner, _Coned) {
       console.log("ConeCaser");
-      ConeCaser(_r);
+      ConeCaser(_Coner);
     }
-    function ConeCasera_g(_r, _a_g) {
+    function ConeCasera_g(_Coner, _Conea_g) {
       console.log("ConeCaser");
-      ConeCaser(_r);
+      ConeCaser(_Coner);
     }
-    function ConeCasera_m(_r, _a_m) {
-      if (s == null || s == 0 || isNaN(s) == true) {
-        var _s = (_a_m/(_r*Math.PI));
-        setS(_s);
-        console.log(`_s = ${_s}`);
+    function ConeCasera_m(_Coner, _Conea_m) {
+      if (Cones == null || Cones == 0 || isNaN(Cones) == true) {
+        var _Cones = (_Conea_m/(_Coner*Math.PI));
+        setConeS(_Cones);
+        console.log(`_Cones = ${_Cones}`);
       }
       console.log("ConeCasers");
-      ConeCasers(_r, _s);
+      ConeCasers(_Coner, _Cones);
     }
-    function ConeCasera_o(_r, _a_o) {
-      if (s == null || s == 0 || isNaN(s) == true) {
-        var _s = ((_a_o/Math.PI)/_r-_r);
-        setS(_s);
-        console.log(`_s = ${_s}`);
+    function ConeCasera_o(_Coner, _Conea_o) {
+      if (Cones == null || Cones == 0 || isNaN(Cones) == true) {
+        var _Cones = ((_Conea_o/Math.PI)/_Coner-_Coner);
+        setConeS(_Cones);
+        console.log(`_Cones = ${_Cones}`);
       }
       console.log("ConeCasers");
-      ConeCasers(_r, _s);
+      ConeCasers(_Coner, _Cones);
     }
-    function ConeCaserV(_r, _V) {
-      if (h == null || h == 0 || isNaN(h) == true) {
-        var _h = (_V/((1/3)*Math.PI*_r*_r));
-        setH(_h);
-        console.log(`_h = ${_h}`);
+    function ConeCaserV(_Coner, _ConeV) {
+      if (Coneh == null || Coneh == 0 || isNaN(Coneh) == true) {
+        var _Coneh = (_ConeV/((1/3)*Math.PI*_Coner*_Coner));
+        setConeH(_Coneh);
+        console.log(`_Coneh = ${_Coneh}`);
       }
       console.log("ConeCaserh");
-      ConeCaserh(_r, _h);
+      ConeCaserh(_Coner, _Coneh);
     }
-    function ConeCaserU_g(_r, _U_g) {
+    function ConeCaserU_g(_Coner, _ConeU_g) {
       console.log("ConeCaser");
-      ConeCaser(_r);
+      ConeCaser(_Coner);
     }
-    function ConeCaserhoa(_r, _hoa) {
-      if (h == null || h == 0 || isNaN(h) == true) {
-        var _h = (Math.sin(_r/_hoa));
-        setH(_h);
-        console.log(`_h = ${_h}`);
+    function ConeCaserhoa(_Coner, _Conehoa) {
+      if (Coneh == null || Coneh == 0 || isNaN(Coneh) == true) {
+        var _Coneh = (Math.sin(_Coner/_Conehoa));
+        setConeH(_Coneh);
+        console.log(`_Coneh = ${_Coneh}`);
       }
       console.log("ConeCaserh");
-      ConeCaserh(_r, _h);
+      ConeCaserh(_Coner, _Coneh);
     }
 
     //h case
-    function ConeCasehs(_h, _s) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (Math.sqrt(_s*_s-_h*_h));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasehs(_Coneh, _Cones) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (Math.sqrt(_Cones*_Cones-_Coneh*_Coneh));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserh");
-      ConeCaserh(_r, _h);
+      ConeCaserh(_Coner, _Coneh);
     }
-    function ConeCasehd(_h, _d) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_d/2);
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasehd(_Coneh, _Coned) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_Coned/2);
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserh");
-      ConeCaserh(_r, _h);
+      ConeCaserh(_Coner, _Coneh);
     }
-    function ConeCaseha_g(_h, _a_g) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (Math.sqrt(_a_g/Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCaseha_g(_Coneh, _Conea_g) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (Math.sqrt(_Conea_g/Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserh");
-      ConeCaserh(_r, _h);
+      ConeCaserh(_Coner, _Coneh);
     }
-    function ConeCaseha_m(_h, _a_m) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _p = (_h*_h);
-        var _q = (-_a_m*_a_m)/(Math.PI*Math.PI);
-        var _r = (Math.sqrt(pqformel(_p, _q, "+")));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCaseha_m(_Coneh, _Conea_m) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _p = (_Coneh*_Coneh);
+        var _q = (-_Conea_m*_Conea_m)/(Math.PI*Math.PI);
+        var _Coner = (Math.sqrt(pqformel(_p, _q, "+")));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserh");
-      ConeCaserh(_r, _h);
+      ConeCaserh(_Coner, _Coneh);
     }
-    function ConeCaseha_o(_h, _a_o) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (Math.sqrt(Math.sqrt((_a_o*_a_o)/(Math.PI*Math.PI)/(_h*_h)/2)));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCaseha_o(_Coneh, _Conea_o) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (Math.sqrt(Math.sqrt((_Conea_o*_Conea_o)/(Math.PI*Math.PI)/(_Coneh*_Coneh)/2)));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserh");
-      ConeCaserh(_r, _h);
+      ConeCaserh(_Coner, _Coneh);
     }
-    function ConeCasehV(_h, _V) {
-      if (a_g == null || a_g == 0 || isNaN(a_g) == true) {
-        var _a_g = ((3*_V)/_h);
-        setA_G(_a_g);
-        console.log(`_a_g = ${_a_g}`);
+    function ConeCasehV(_Coneh, _ConeV) {
+      if (Conea_g == null || Conea_g == 0 || isNaN(Conea_g) == true) {
+        var _Conea_g = ((3*_ConeV)/_Coneh);
+        setConeA_G(_Conea_g);
+        console.log(`_Conea_g = ${_Conea_g}`);
       }
       console.log("ConeCaseha_g");
-      ConeCaseha_g(_h, _a_g);
+      ConeCaseha_g(_Coneh, _Conea_g);
     }
-    function ConeCasehU_g(_h, _U_g) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_U_g/(2*Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasehU_g(_Coneh, _ConeU_g) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_ConeU_g/(2*Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserh");
-      ConeCaserh(_r, _h);
+      ConeCaserh(_Coner, _Coneh);
     }
-    function ConeCasehhoa(_h, _hoa) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (Math.tan(_h*_hoa));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasehhoa(_Coneh, _Conehoa) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (Math.tan(_Coneh*_Conehoa));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserh");
-      ConeCaserh(_r, _h);
+      ConeCaserh(_Coner, _Coneh);
     }
 
     //s case
-    function ConeCasesd(_s, _d) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_d/2);
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasesd(_Cones, _Coned) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_Coned/2);
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCasers");
-      ConeCasers(_r, _s);
+      ConeCasers(_Coner, _Cones);
     }
-    function ConeCasesa_g(_s, _a_g) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_a_g/Math.PI);
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasesa_g(_Cones, _Conea_g) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_Conea_g/Math.PI);
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCasers");
-      ConeCasers(_r, _s);
+      ConeCasers(_Coner, _Cones);
     }
-    function ConeCasesa_m(_s, _a_m) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_a_m/(_s*Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasesa_m(_Cones, _Conea_m) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_Conea_m/(_Cones*Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCasers");
-      ConeCasers(_r, _s);
+      ConeCasers(_Coner, _Cones);
     }
-    function ConeCasesa_o(_s, _a_o) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (Math.sqrt((_a_o/(Math.PI+Math.PI*_s))));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasesa_o(_Cones, _Conea_o) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (Math.sqrt((_Conea_o/(Math.PI+Math.PI*_Cones))));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCasers");
-      ConeCasers(_r, _s);
+      ConeCasers(_Coner, _Cones);
     }
-    function ConeCasesV(_s, _V) {
-      var p = (-(_s*_s));
+    function ConeCasesV(_Cones, _ConeV) {
+      var p = (-(_Cones*_Cones));
       console.log(`p = ${p}`);
       var q = (3*V/Math.PI);
       console.log(`q = ${q}`);
       if (cardanischeformel(p, q , 1) > 0) {
-        var _h = cardanischeformel(p, q , 1);
-        setH(_h);
-        console.log(`_h = ${_h}`);
+        var _Coneh = cardanischeformel(p, q , 1);
+        setConeH(_Coneh);
+        console.log(`_Coneh = ${_Coneh}`);
         console.log("ConeCasehs");
-        ConeCasehs(_h, _s);
+        ConeCasehs(_Coneh, _Cones);
       } else {
         if (cardanischeformel(p, q , 2) > 0) {
-          var _h = cardanischeformel(p, q , 2);
-          setH(_h);
-          console.log(`_h = ${_h}`);
+          var _Coneh = cardanischeformel(p, q , 2);
+          setConeH(_Coneh);
+          console.log(`_Coneh = ${_Coneh}`);
           console.log("ConeCasehs");
-          ConeCasehs(_h, _s);
+          ConeCasehs(_Coneh, _Cones);
         } else {
           if (cardanischeformel(p, q , 3) > 0) {
-            var _h = cardanischeformel(p, q , 3);
-            setH(_h);
-            console.log(`_h = ${_h}`);
+            var _Coneh = cardanischeformel(p, q , 3);
+            setConeH(_Coneh);
+            console.log(`_Coneh = ${_Coneh}`);
             console.log("ConeCasehs");
-            ConeCasehs(_h, _s);
+            ConeCasehs(_Coneh, _Cones);
           } else {
-            toast.error("Your input value combination is not possible");
+            toast.error("The values don't fit to the formeln!");
           }
         }
       }
     }
-    function ConeCasesU_g(_s, _U_g) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_U_g/(2*Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasesU_g(_Cones, _ConeU_g) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_ConeU_g/(2*Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCasers");
-      ConeCasers(_r, _s);
+      ConeCasers(_Coner, _Cones);
     }
-    function ConeCaseshoa(_s, _hoa) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (Math.sin(_s*_hoa));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCaseshoa(_Cones, _Conehoa) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (Math.sin(_Cones*_Conehoa));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCasers");
-      ConeCasers(_r, _s);
+      ConeCasers(_Coner, _Cones);
     }
 
     //d case
-    function ConeCaseda_g(_d, _a_g) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_d/2);
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCaseda_g(_Coned, _Conea_g) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_Coned/2);
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCasera_g");
-      ConeCasera_g(_r, _a_g);
+      ConeCasera_g(_Coner, _Conea_g);
     }
-    function ConeCaseda_m(_d, _a_m) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_d/2);
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCaseda_m(_Coned, _Conea_m) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_Coned/2);
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCasera_m");
-      ConeCasera_m(_r, _a_m);
+      ConeCasera_m(_Coner, _Conea_m);
     }
-    function ConeCaseda_o(_d, _a_o) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_d/2);
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCaseda_o(_Coned, _Conea_o) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_Coned/2);
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCasera_o");
-      ConeCasera_o(_r, _a_o);
+      ConeCasera_o(_Coner, _Conea_o);
     }
-    function ConeCasedV(_d, _V) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_d/2);
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasedV(_Coned, _ConeV) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_Coned/2);
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserV");
-      ConeCaserV(_r, _V);
+      ConeCaserV(_Coner, _ConeV);
     }
-    function ConeCasedU_g(_d, _U_g) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_d/2);
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasedU_g(_Coned, _ConeU_g) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_Coned/2);
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserU_g");
-      ConeCaserU_g(_r, _U_g);
+      ConeCaserU_g(_Coner, _ConeU_g);
     }
-    function ConeCasedhoa(_d, _hoa) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_d/2);
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasedhoa(_Coned, _Conehoa) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_Coned/2);
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserhoa");
-      ConeCaserhoa(_r, _hoa);
+      ConeCaserhoa(_Coner, _Conehoa);
     }
 
     //A_G case
-    function ConeCasea_ga_m(_a_g, _a_m) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (Math.sqrt(_a_g/Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasea_ga_m(_Conea_g, _Conea_m) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (Math.sqrt(_Conea_g/Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCasera_m");
-      ConeCasera_m(_r, _a_m);
+      ConeCasera_m(_Coner, _Conea_m);
     }
-    function ConeCasea_ga_o(_a_g, _a_o) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (Math.sqrt(_a_g/Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasea_ga_o(_Conea_g, _Conea_o) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (Math.sqrt(_Conea_g/Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCasera_o");
-      ConeCasera_o(_r, _a_o);
+      ConeCasera_o(_Coner, _Conea_o);
     }
-    function ConeCasea_gV(_a_g, _V) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (Math.sqrt(_a_g/Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasea_gV(_Conea_g, _ConeV) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (Math.sqrt(_Conea_g/Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserV");
-      ConeCaserV(_r, _V);
+      ConeCaserV(_Coner, _ConeV);
     }
-    function ConeCasea_gU_g(_a_g, _U_g) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (Math.sqrt(_a_g/Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasea_gU_g(_Conea_g, _ConeU_g) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (Math.sqrt(_Conea_g/Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserU_g");
-      ConeCaserU_g(_r, _U_g);
+      ConeCaserU_g(_Coner, _ConeU_g);
     }
-    function ConeCasea_ghoa(_a_g, _hoa) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (Math.sqrt(_a_g/Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasea_ghoa(_Conea_g, _Conehoa) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (Math.sqrt(_Conea_g/Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserhoa");
-      ConeCaserhoa(_r, _hoa);
+      ConeCaserhoa(_Coner, _Conehoa);
     }
 
     //A_M case
-    function ConeCasea_ma_o(_a_m, _a_o) {
-      if (a_g == null || a_g == 0 || isNaN(a_g) == true) {
-        var _a_g = (_a_o-_a_m);
-        setA_G(_a_g);
-        console.log(`_a_g = ${_a_g}`);
+    function ConeCasea_ma_o(_Conea_m, _Conea_o) {
+      if (Conea_g == null || Conea_g == 0 || isNaN(Conea_g) == true) {
+        var _Conea_g = (_Conea_o-_Conea_m);
+        setConeA_G(_Conea_g);
+        console.log(`_Conea_g = ${_Conea_g}`);
       }
       console.log("ConeCasea_ga_m");
-      ConeCasea_ga_m(_a_g, _a_m);
+      ConeCasea_ga_m(_Conea_g, _Conea_m);
     }
-    function ConeCasea_mV(_a_m, _V) {
+    function ConeCasea_mV(_Conea_m, _ConeV) {
       setImpossible(true);
       toast.error("That isn't possible! rtfm!")
-      if (isNaN(r) == true || isNaN(h) == true || isNaN(s) == true || isNaN(d) == true || isNaN(a_g) == true || isNaN(a_m) == true || isNaN(a_o) == true || isNaN(V) == true || isNaN(U_g) == true || isNaN(hoa) == true) {
+      if (isNaN(Coner) == true || isNaN(Coneh) == true || isNaN(Cones) == true || isNaN(Coned) == true || isNaN(Conea_g) == true || isNaN(Conea_m) == true || isNaN(Conea_o) == true || isNaN(ConeV) == true || isNaN(ConeU_g) == true || isNaN(Conehoa) == true) {
         toast.error("One of the results is not a real number")
       }
     }
-    function ConeCasea_mU_g(_a_m, _U_g) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_U_g/(2*Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasea_mU_g(_Conea_m, _ConeU_g) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_ConeU_g/(2*Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCasera_m");
-      ConeCasera_m(_r, _a_m);
+      ConeCasera_m(_Coner, _Conea_m);
     }
-    function ConeCasea_mhoa(_a_m, _hoa) {
+    function ConeCasea_mhoa(_Conea_m, _Conehoa) {
       setImpossible(true);
       toast.error("That isn't possible! rtfm!");
     }
 
     //A_O case
-    function ConeCasea_oV(_a_o, _V) {
+    function ConeCasea_oV(_Conea_o, _ConeV) {
       setImpossible(true);
       toast.error("That isn't possible! rtfm!")
-      if (isNaN(r) == true || isNaN(h) == true || isNaN(s) == true || isNaN(d) == true || isNaN(a_g) == true || isNaN(a_m) == true || isNaN(a_o) == true || isNaN(V) == true || isNaN(U_g) == true || isNaN(hoa) == true) {
+      if (isNaN(Coner) == true || isNaN(Coneh) == true || isNaN(Cones) == true || isNaN(Coned) == true || isNaN(Conea_g) == true || isNaN(Conea_m) == true || isNaN(Conea_o) == true || isNaN(ConeV) == true || isNaN(ConeU_g) == true || isNaN(Conehoa) == true) {
         toast.error("One of the results is not a real number")
       }
     }
-    function ConeCasea_oU_g(_a_o, _U_g) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_U_g/(2*Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasea_oU_g(_Conea_o, _ConeU_g) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_ConeU_g/(2*Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCasera_o");
-      ConeCasera_o(_r, _a_o);
+      ConeCasera_o(_Coner, _Conea_o);
     }
-    function ConeCasea_ohoa(_a_o, _hoa) {
-      setImpossible(true);
-      toast.error("That isn't possible! rtfm!")
+    function ConeCasea_ohoa(_Conea_o, _Conehoa) {
+      toast.error("That isn't possible! rtfm!");
     }
 
     //V case
-    function ConeCaseVU_g(_V, _U_g) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_U_g/(2*Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCaseVU_g(_ConeV, _ConeU_g) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_ConeU_g/(2*Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserV");
-      ConeCaserV(_r, _V);
+      ConeCaserV(_Coner, _ConeV);
     }
-    function ConeCaseVhoa(_V, _hoa) {
-      setImpossible(true);
+    function ConeCaseVhoa(_ConeV, _Conehoa) {
       toast.error("That isn't possible! rtfm!");
     }
 
     // U_g case
-    function ConeCaseU_ghoa(_U_g, _hoa) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_U_g/(2*Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCaseU_ghoa(_ConeU_g, _Conehoa) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_ConeU_g/(2*Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
       }
       console.log("ConeCaserhoa");
-      ConeCaserhoa(_r, _hoa);
+      ConeCaserhoa(_Coner, _Conehoa);
     }
 
     //single case
-    function ConeCaser(_r) {
-      if (d == null || d == 0 || isNaN(d) == true) {
-        var _d = (2*_r);
-        setD(_d);
-        console.log(`_d = ${_d}`);
+    function ConeCaser(_Coner) {
+      if (Coned == null || Coned == 0 || isNaN(Coned) == true) {
+        var _Coned = (2*_Coner);
+        setConeD(_Coned);
+        console.log(`_Coned = ${_Coned}`);
       }
-      if (a_g == null || a_g == 0 || isNaN(a_g) == true) {
-        var _a_g = (_r*_r*Math.PI);
-        setA_G(_a_g);
-        console.log(`_a_g = ${_a_g}`);
+      if (Conea_g == null || Conea_g == 0 || isNaN(Conea_g) == true) {
+        var _Conea_g = (_Coner*_Coner*Math.PI);
+        setConeA_G(_Conea_g);
+        console.log(`_Conea_g = ${_Conea_g}`);
       }
-      if (U_g == null || U_g == 0 || isNaN(U_g) == true) {
-        var _U_g = (2*Math.PI*_r);
-        setU_G(_U_g);
-        console.log(`_U_g = ${_U_g}`);
+      if (ConeU_g == null || ConeU_g == 0 || isNaN(ConeU_g) == true) {
+        var _ConeU_g = (2*Math.PI*_Coner);
+        setConeU_G(_ConeU_g);
+        console.log(`_ConeU_g = ${_ConeU_g}`);
       }
       toast.error("That isn't possible! rtfm!");
     }
-    function ConeCaseh(_h) {
+    function ConeCaseh(_Coneh) {
       toast.error("That isn't possible! rtfm!");
     }
-    function ConeCases(_s) {
+    function ConeCases(_Cones) {
       toast.error("That isn't possible! rtfm!");
     }
-    function ConeCased(_d) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_d/2);
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCased(_Coned) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_Coned/2);
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
         console.log("ConeCaser");
-        ConeCaser(_r);
+        ConeCaser(_Coner);
       }
     }
-    function ConeCasea_g(_a_g) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (Math.sqrt(_a_g/Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCasea_g(_Conea_g) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (Math.sqrt(_Conea_g/Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
         console.log("ConeCaser");
-        ConeCaser(_r);
+        ConeCaser(_Coner);
       }
     }
-    function ConeCasea_m(_a_m) {
+    function ConeCasea_m(_Conea_m) {
       toast.error("That isn't possible! rtfm!");
     }
-    function ConeCasea_o(_a_o) {
+    function ConeCasea_o(_Conea_o) {
       toast.error("That isn't possible! rtfm!");
     }
-    function ConeCaseV(_V) {
+    function ConeCaseV(_ConeV) {
       toast.error("That isn't possible! rtfm!");
     }
-    function ConeCaseU_g(_U_g) {
-      if (r == null || r == 0 || isNaN(r) == true) {
-        var _r = (_U_g/(2*Math.PI));
-        setR(_r);
-        console.log(`_r = ${_r}`);
+    function ConeCaseU_g(_ConeU_g) {
+      if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+        var _Coner = (_ConeU_g/(2*Math.PI));
+        setConeR(_Coner);
+        console.log(`_Coner = ${_Coner}`);
         console.log("ConeCaser");
-        ConeCaser(_r);
+        ConeCaser(_Coner);
       }
     }
-    function ConeCasehoa(_hoa) {
+    function ConeCasehoa(_Conehoa) {
       toast.error("That isn't possible! rtfm!");
     }
-
   }
 
 
   function reset() {
-    setR(0);
-    setH(0);
-    setS(0);
-    setD(0);
-    setA_G(0);
-    setA_M(0);
-    setA_O(0);
-    setV(0);
-    setU_G(0);
-    setHOA(0);
-    setImpossible(false);
+    setConeR(0);
+    setConeH(0);
+    setConeS(0);
+    setConeD(0);
+    setConeA_G(0);
+    setConeA_M(0);
+    setConeA_O(0);
+    setConeV(0);
+    setConeU_G(0);
+    setConeHOA(0);
   }
 
 
@@ -1066,8 +1057,8 @@ export default function Form() {
                 <td>r = </td>
                 <td>
                   <input
-                    value={r}
-                    onChange={e => setR(e.target.value)}
+                    value={Coner}
+                    onChange={e => setConeR(e.target.value)}
                     type="number"
                     onCopy={e => toast.info("There is a button for that!")}
                     onCut={e => toast.info("There is a button for that!")}
@@ -1075,7 +1066,7 @@ export default function Form() {
                   /> cm
                 </td>
                 <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`r = ${r}`)}>
+                  <button onClick={() =>  navigator.clipboard.writeText(`r = ${Coner}`)}>
                     Copy solution
                   </button>
                 </td>
@@ -1084,8 +1075,8 @@ export default function Form() {
                 <td>h = </td>
                 <td>
                   <input
-                    value={h}
-                    onChange={e => setH(e.target.value)}
+                    value={Coneh}
+                    onChange={e => setConeH(e.target.value)}
                     type="number"
                     onCopy={e => toast.info("There is a button for that!")}
                     onCut={e => toast.info("There is a button for that!")}
@@ -1093,7 +1084,7 @@ export default function Form() {
                   /> cm
                 </td>
                 <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`h = ${h}`)}>
+                  <button onClick={() =>  navigator.clipboard.writeText(`h = ${Coneh}`)}>
                     Copy solution
                   </button>
                 </td>
@@ -1102,8 +1093,8 @@ export default function Form() {
                 <td>s = </td>
                 <td>
                   <input
-                    value={s}
-                    onChange={e => setS(e.target.value)}
+                    value={Cones}
+                    onChange={e => setConeS(e.target.value)}
                     type="number"
                     onCopy={e => toast.info("There is a button for that!")}
                     onCut={e => toast.info("There is a button for that!")}
@@ -1111,7 +1102,7 @@ export default function Form() {
                   /> cm
                 </td>
                 <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`s = ${s}`)}>
+                  <button onClick={() =>  navigator.clipboard.writeText(`s = ${Cones}`)}>
                     Copy solution
                   </button>
                 </td>
@@ -1120,8 +1111,8 @@ export default function Form() {
                 <td>d = </td>
                 <td>
                   <input
-                    value={d}
-                    onChange={e => setD(e.target.value)}
+                    value={Coned}
+                    onChange={e => setConeD(e.target.value)}
                     type="number"
                     onCopy={e => toast.info("There is a button for that!")}
                     onCut={e => toast.info("There is a button for that!")}
@@ -1129,7 +1120,7 @@ export default function Form() {
                   /> cm
                 </td>
                 <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`d = ${d}`)}>
+                  <button onClick={() =>  navigator.clipboard.writeText(`d = ${Coned}`)}>
                     Copy solution
                   </button>
                 </td>
@@ -1138,8 +1129,8 @@ export default function Form() {
                 <td>a<sub>g</sub> = </td>
                 <td>
                   <input
-                    value={a_g}
-                    onChange={e => setA_G(e.target.value)}
+                    value={Conea_g}
+                    onChange={e => setConeA_G(e.target.value)}
                     type="number"
                     onCopy={e => toast.info("There is a button for that!")}
                     onCut={e => toast.info("There is a button for that!")}
@@ -1147,7 +1138,7 @@ export default function Form() {
                   /> cm²
                 </td>
                 <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`a_g = ${a_g}`)}>
+                  <button onClick={() =>  navigator.clipboard.writeText(`a_g = ${Conea_g}`)}>
                     Copy solution
                   </button>
                 </td>
@@ -1156,8 +1147,8 @@ export default function Form() {
                 <td>a<sub>m</sub> = </td>
                 <td>
                   <input
-                    value={a_m}
-                    onChange={e => setA_M(e.target.value)}
+                    value={Conea_m}
+                    onChange={e => setConeA_M(e.target.value)}
                     type="number"
                     onCopy={e => toast.info("There is a button for that!")}
                     onCut={e => toast.info("There is a button for that!")}
@@ -1165,7 +1156,7 @@ export default function Form() {
                   /> cm²
                 </td>
                 <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`a_m = ${a_m}`)}>
+                  <button onClick={() =>  navigator.clipboard.writeText(`a_m = ${Conea_m}`)}>
                     Copy solution
                   </button>
                 </td>
@@ -1174,8 +1165,8 @@ export default function Form() {
                 <td>a<sub>o</sub> = </td>
                 <td>
                   <input
-                    value={a_o}
-                    onChange={e => setA_O(e.target.value)}
+                    value={Conea_o}
+                    onChange={e => setConeA_O(e.target.value)}
                     type="number"
                     onCopy={e => toast.info("There is a button for that!")}
                     onCut={e => toast.info("There is a button for that!")}
@@ -1183,7 +1174,7 @@ export default function Form() {
                   /> cm²
                 </td>
                 <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`a_o = ${a_o}`)}>
+                  <button onClick={() =>  navigator.clipboard.writeText(`a_o = ${Conea_o}`)}>
                     Copy solution
                   </button>
                 </td>
@@ -1192,8 +1183,8 @@ export default function Form() {
                 <td>V = </td>
                 <td>
                   <input
-                    value={V}
-                    onChange={e => setV(e.target.value)}
+                    value={ConeV}
+                    onChange={e => setConeV(e.target.value)}
                     type="number"
                     onCopy={e => toast.info("There is a button for that!")}
                     onCut={e => toast.info("There is a button for that!")}
@@ -1201,7 +1192,7 @@ export default function Form() {
                   /> cm³
                 </td>
                 <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`V = ${V}`)}>
+                  <button onClick={() =>  navigator.clipboard.writeText(`V = ${ConeV}`)}>
                     Copy solution
                   </button>
                 </td>
@@ -1210,8 +1201,8 @@ export default function Form() {
                 <td>U<sub>g</sub> = </td>
                 <td>
                   <input
-                    value={U_g}
-                    onChange={e => setU_G(e.target.value)}
+                    value={ConeU_g}
+                    onChange={e => setConeU_G(e.target.value)}
                     type="number"
                     onCopy={e => toast.info("There is a button for that!")}
                     onCut={e => toast.info("There is a button for that!")}
@@ -1219,7 +1210,7 @@ export default function Form() {
                   /> cm
                 </td>
                 <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`U_g = ${U_g}`)}>
+                  <button onClick={() =>  navigator.clipboard.writeText(`U_g = ${ConeU_g}`)}>
                     Copy solution
                   </button>
                 </td>
@@ -1228,8 +1219,8 @@ export default function Form() {
                 <td>φ = </td>
                 <td>
                   <input
-                    value={hoa}
-                    onChange={e => setHOA(e.target.value)}
+                    value={Conehoa}
+                    onChange={e => setConeHOA(e.target.value)}
                     type="number"
                     onCopy={e => toast.info("There is a button for that!")}
                     onCut={e => toast.info("There is a button for that!")}
@@ -1237,7 +1228,7 @@ export default function Form() {
                   /> °
                 </td>
                 <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`φ = ${hoa}`)}>
+                  <button onClick={() =>  navigator.clipboard.writeText(`φ = ${Conehoa}`)}>
                     Copy solution
                   </button>
                 </td>
@@ -1246,7 +1237,7 @@ export default function Form() {
           </table>
           <br></br>
           <label>
-            <button onClick={() => navigator.clipboard.writeText(`r = ${r}, h = ${h}, s = ${s}, d = ${d}, a_g = ${a_g}, a_m = ${a_m}, a_o = ${a_o}, V = ${V}, U_g = ${U_g}, φ = ${hoa}.`)}>
+            <button onClick={() => navigator.clipboard.writeText(`r = ${Coner}, h = ${Coneh}, s = ${Cones}, d = ${Coned}, a_g = ${Conea_g}, a_m = ${Conea_m}, a_o = ${Conea_o}, V = ${ConeV}, U_g = ${ConeU_g}, φ = ${Conehoa}.`)}>
               Copy all Values
             </button>
           </label>
@@ -1271,13 +1262,13 @@ export default function Form() {
             <br></br>
           </label>
           <br></br>
-          {r == 3 && h == 1 && s == 4 && d == 1 && a_g  == 5 && a_o == 9 && V == 2 && U_g == 6 && hoa == 5 &&
+          {Coner == 3 && Coneh == 1 && Cones == 4 && Coned == 1 && Conea_g  == 5 && Conea_o == 9 && ConeV == 2 && ConeU_g == 6 && Conehoa == 5 &&
             <label>
               <input
                 value={extratext}
                 onChange={e => {
                   setExtratext(e.target.value)
-                  setK(Math.round(a_m))
+                  setK(Math.round(Conea_m))
                 }}
                 type="text"
                 onCopy={e => toast.info("There is a button for that!")}
@@ -1287,7 +1278,7 @@ export default function Form() {
             </label>
           }
           <br></br>
-          {r == 3 && h == 1 && s == 4 && d == 1 && a_g  == 5 && a_o == 9 && V == 2 && U_g == 6 && hoa == 5 &&
+          {Coner == 3 && Coneh == 1 && Cones == 4 && Coned == 1 && Conea_g  == 5 && Conea_o == 9 && ConeV == 2 && ConeU_g == 6 && Conehoa == 5 &&
             <label>
               <br></br>
               {BytetoInteger(extratext, k)
