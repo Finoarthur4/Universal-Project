@@ -9,6 +9,11 @@ import cone from './cone.png'; // Tell webpack this JS file uses this image
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+{/*"predeploy": "npm run build",
+"deploy": "gh-pages -b main -d build",*/}
+//If you wwant to push it via VSC you must copy it into "Scripts"
+//It is better to push via Git Extensions, because of several back-ups
+
 export default function Form() {
   const [r, setR] = useState(0);
   const [h, setH] = useState(0);
@@ -435,8 +440,11 @@ export default function Form() {
         console.log(`_hoa = ${_hoa}`);
       }
       if (isNaN(r) == true || isNaN(h) == true || isNaN(s) == true || isNaN(d) == true || isNaN(a_g) == true || isNaN(a_m) == true || isNaN(a_o) == true || isNaN(V) == true || isNaN(U_g) == true || isNaN(hoa) == true) {
-        toast.error("That isn't possible! rtfm!")
-        toast.error("One of the results is not a real number")
+        toast.error("That isn't possible! rtfm!");
+        toast.error("One of the results is not a real number");
+      }
+      if (_r != Math.sqrt(_s*_s-_h*_h) || _h != Math.sqrt(_s*_s-_r*_r) || _s != Math.sqrt(_h*_h+_r*_r) || _d != (2*_r) || _a_g != (_r*_r*Math.PI) || _a_m != (_r*_s*Math.PI) || _a_o != (_a_g+_r*_r) || _V != ((1/3)*_a_g*_h) || _U_g != (2*Math.PI*_r) || _hoa != Math.asin(r/s)) {
+        toast.error("The values don't fit to the formeln!");
       }
     }
     function ConeCasers(_r, _s) {
@@ -999,7 +1007,7 @@ export default function Form() {
           <label>
             <h2>Manual:</h2>
             <p>
-              Thinking: Hopefully this guy won't notice that i can't speak english very well.
+              <i>Thinking: Hopefully this guy won't notice that i can't speak english very well.</i>
               <br></br>
               This calculator is at the moment <b>only for straight circular cones!</b>
               <br></br>
@@ -1031,17 +1039,47 @@ export default function Form() {
               <br></br>
               But now to the <b>exceptions</b>:
               <br></br>
+              <h3>Exceptions</h3>
+              <br></br>
               First the cases where to values are given but aren't enough to calculate:
               <br></br>
-              empty
+              - a<sub>m</sub> and V
               <br></br>
-              Of course some things also can't work. These are:
+              - a<sub>m</sub> and φ
               <br></br>
-              r can't be something else than d/2 or bigger than s. Because of the Satz von Pyhtagoras. Because of this h also can't be bigger than s. 
+              - a<sub>o</sub> and V maybe
               <br></br>
-              Furthermore the Volumen can't be bigger than a<sub>g</sub> or a<sub>m</sub> if one of this values is bigger than 1. 
+              - a<sub>o</sub> and φ
               <br></br>
-              Even more no value which you type in can't be smaller or be 0.
+              - V and φ
+              <br></br>
+              - If Values are smaller than 0.
+              <br></br>
+              - At least 2 Values must be bigger than 0. 
+              <br></br>
+              - If only value is given, the values are calculated which are possible with 1 value.
+              <br></br>
+              - The values must fit to this formeln and it's ableitungen:
+              <br></br>
+              r = sqrt(s²-h²)
+              <br></br>
+              h = sqrt(s²-r²)
+              <br></br>
+              s = sqrt(h²+r²)
+              <br></br>
+              d = 2*r
+              <br></br>
+              a<sub>g</sub> = r² * PI
+              <br></br>
+              a<sub>m</sub> = r * s * PI
+              <br></br>
+              a<sub>o</sub> = a<sub>g</sub> + a<sub>m</sub> = r * PI * (r + s)
+              <br></br>
+              V = 1/3 * PI * r² * h = 1/3 * a<sub>g</sub> * h
+              <br></br>
+              U<sub>g</sub> = 2 * PI * r
+              <br></br>
+              φ = arcsin(r/s) = arctan(r/h)
               <br></br>
             </p>
           </label>
