@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import cone from './cone.png'; // Tell webpack this JS file uses this image
 
-import { pqformel, cardanischeformel } from './App';
+import { pqformel, cardanischeformel } from './Mathprogramms.js';
 
 function ConeCalculation() {
 setImpossible(false);
@@ -798,7 +798,7 @@ setConeU_G(0);
 setConeHOA(0);
 }
 
-export default function ConeCalculator() {
+export function ConeCalculator() {
   //Cone Values
   const [Coner, setConeR] = useState(0);
   const [Coneh, setConeH] = useState(0);
