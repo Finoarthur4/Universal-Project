@@ -817,344 +817,342 @@ setConeHOA(0);
     <>
       <ToastContainer />
       <div>
+        <hr/>
         <label>
-          <hr />
-          <label>
-            <h1>Welcome to CEUCCC</h1>
-            <p>(<b>C</b>ompletely <b>E</b>xaggerated <b>U</b>nnecessary <b>C</b>omplicated <b>C</b>one <b>C</b>alculator)</p>
-          </label>
-          <br></br>
-          <img src={cone} alt='Cone' />
-          <br></br>
-          <label>
-            <h2>Manual:</h2>
-            <p>
-              <i>Thinking: Hopefully this guy won't notice that i can't speak english very well.</i>
-              <br></br>
-              This calculator is at the moment <b>only for straight circular cones!</b>
-              <br></br>
-              It is enough to enter 2 values to calculate all data of the cone.
-              <br></br>
-              Unfortunately, there are some exceptions.
-              <br></br>
-              But first the <b>explanations of the symbols</b>.
-              <br></br>
-              <b>r</b> is the radius.
-              <br></br>
-              <b>h</b> is the height.
-              <br></br>
-              <b>s</b> is the length of the mantellinie.
-              <br></br>
-              <b>d</b> is the durchmesser.
-              <br></br>
-              <b>a<sub>g</sub> (a_g)</b> is the fächeninhalt of the grundfläche.
-              <br></br>
-              <b>a<sub>m</sub> (a_m)</b> is the flächeninhalt of the mantel.
-              <br></br>
-              <b>a<sub>o</sub> (a_o)</b> is the flächeninhalt of the whole oberfläche.
-              <br></br>
-              <b>V</b> is the volumen.
-              <br></br>
-              <b>U<sub>g</sub> (U_g)</b> is the Umfang of the grundfläche.
-              <br></br>
-              <b>φ</b> is the half opening winkel.
-              <br></br>
-              But now to the <b>exceptions</b>:
-              <br></br>
-              <h2>Exceptions:</h2>
-              <br></br>
-              First the cases where to values are given but aren't enough to calculate:
-              <br></br>
-              - a<sub>m</sub> and V
-              <br></br>
-              - a<sub>m</sub> and φ
-              <br></br>
-              - a<sub>o</sub> and V maybe
-              <br></br>
-              - a<sub>o</sub> and φ
-              <br></br>
-              - V and φ
-              <br></br>
-              - If Values are smaller than 0.
-              <br></br>
-              - At least 2 Values must be bigger than 0. 
-              <br></br>
-              - If only value is given, the values are calculated which are possible with 1 value.
-              <br></br>
-              - The values must fit to this formeln and it's ableitungen:
-              <br></br>
-              r = sqrt(s²-h²)
-              <br></br>
-              h = sqrt(s²-r²)
-              <br></br>
-              s = sqrt(h²+r²)
-              <br></br>
-              d = 2*r
-              <br></br>
-              a<sub>g</sub> = r² * PI
-              <br></br>
-              a<sub>m</sub> = r * s * PI
-              <br></br>
-              a<sub>o</sub> = a<sub>g</sub> + a<sub>m</sub> = r * PI * (r + s)
-              <br></br>
-              V = 1/3 * PI * r² * h = 1/3 * a<sub>g</sub> * h
-              <br></br>
-              U<sub>g</sub> = 2 * PI * r
-              <br></br>
-              φ = arcsin(r/s) = arctan(r/h)
-              <br></br>
-            </p>
-          </label>
-          <br></br>
-          <label>
-            <h2>Calculator:</h2>
-          </label>
-          <br></br>
-          <table>
-            <thead>
-              <tr>
-                <th>symbol</th>
-                <th>value</th>
-                <th>copy</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>r = </td>
-                <td>
-                  <input
-                    value={Coner}
-                    onChange={e => setConeR(e.target.value)}
-                    type="number"
-                    onCopy={e => toast.info("There is a button for that!")}
-                    onCut={e => toast.info("There is a button for that!")}
-                    onPaste={e => toast("Too lazy to type?")}
-                  /> cm
-                </td>
-                <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`r = ${Coner}`)}>
-                    Copy solution
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>h = </td>
-                <td>
-                  <input
-                    value={Coneh}
-                    onChange={e => setConeH(e.target.value)}
-                    type="number"
-                    onCopy={e => toast.info("There is a button for that!")}
-                    onCut={e => toast.info("There is a button for that!")}
-                    onPaste={e => toast("Too lazy to type?")}
-                  /> cm
-                </td>
-                <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`h = ${Coneh}`)}>
-                    Copy solution
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>s = </td>
-                <td>
-                  <input
-                    value={Cones}
-                    onChange={e => setConeS(e.target.value)}
-                    type="number"
-                    onCopy={e => toast.info("There is a button for that!")}
-                    onCut={e => toast.info("There is a button for that!")}
-                    onPaste={e => toast("Too lazy to type?")}
-                  /> cm
-                </td>
-                <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`s = ${Cones}`)}>
-                    Copy solution
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>d = </td>
-                <td>
-                  <input
-                    value={Coned}
-                    onChange={e => setConeD(e.target.value)}
-                    type="number"
-                    onCopy={e => toast.info("There is a button for that!")}
-                    onCut={e => toast.info("There is a button for that!")}
-                    onPaste={e => toast("Too lazy to type?")}
-                  /> cm
-                </td>
-                <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`d = ${Coned}`)}>
-                    Copy solution
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>a<sub>g</sub> = </td>
-                <td>
-                  <input
-                    value={Conea_g}
-                    onChange={e => setConeA_G(e.target.value)}
-                    type="number"
-                    onCopy={e => toast.info("There is a button for that!")}
-                    onCut={e => toast.info("There is a button for that!")}
-                    onPaste={e => toast("Too lazy to type?")}
-                  /> cm²
-                </td>
-                <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`a_g = ${Conea_g}`)}>
-                    Copy solution
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>a<sub>m</sub> = </td>
-                <td>
-                  <input
-                    value={Conea_m}
-                    onChange={e => setConeA_M(e.target.value)}
-                    type="number"
-                    onCopy={e => toast.info("There is a button for that!")}
-                    onCut={e => toast.info("There is a button for that!")}
-                    onPaste={e => toast("Too lazy to type?")}
-                  /> cm²
-                </td>
-                <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`a_m = ${Conea_m}`)}>
-                    Copy solution
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>a<sub>o</sub> = </td>
-                <td>
-                  <input
-                    value={Conea_o}
-                    onChange={e => setConeA_O(e.target.value)}
-                    type="number"
-                    onCopy={e => toast.info("There is a button for that!")}
-                    onCut={e => toast.info("There is a button for that!")}
-                    onPaste={e => toast("Too lazy to type?")}
-                  /> cm²
-                </td>
-                <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`a_o = ${Conea_o}`)}>
-                    Copy solution
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>V = </td>
-                <td>
-                  <input
-                    value={ConeV}
-                    onChange={e => setConeV(e.target.value)}
-                    type="number"
-                    onCopy={e => toast.info("There is a button for that!")}
-                    onCut={e => toast.info("There is a button for that!")}
-                    onPaste={e => toast("Too lazy to type?")}
-                  /> cm³
-                </td>
-                <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`V = ${ConeV}`)}>
-                    Copy solution
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>U<sub>g</sub> = </td>
-                <td>
-                  <input
-                    value={ConeU_g}
-                    onChange={e => setConeU_G(e.target.value)}
-                    type="number"
-                    onCopy={e => toast.info("There is a button for that!")}
-                    onCut={e => toast.info("There is a button for that!")}
-                    onPaste={e => toast("Too lazy to type?")}
-                  /> cm
-                </td>
-                <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`U_g = ${ConeU_g}`)}>
-                    Copy solution
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>φ = </td>
-                <td>
-                  <input
-                    value={Conehoa}
-                    onChange={e => setConeHOA(e.target.value)}
-                    type="number"
-                    onCopy={e => toast.info("There is a button for that!")}
-                    onCut={e => toast.info("There is a button for that!")}
-                    onPaste={e => toast("Too lazy to type?")}
-                  /> °
-                </td>
-                <td>
-                  <button onClick={() =>  navigator.clipboard.writeText(`φ = ${Conehoa}`)}>
-                    Copy solution
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <br></br>
-          <label>
-            <button onClick={() => navigator.clipboard.writeText(`r = ${Coner}, h = ${Coneh}, s = ${Cones}, d = ${Coned}, a_g = ${Conea_g}, a_m = ${Conea_m}, a_o = ${Conea_o}, V = ${ConeV}, U_g = ${ConeU_g}, φ = ${Conehoa}.`)}>
-              Copy all Values
-            </button>
-          </label>
-          <br></br>
-          <br></br>
-          <label>
-            <button onClick={() => {
-              toast.info("Calculator started.")
-              ConeCalculation()
-            }}>
-              <h2>
-                Calculate
-              </h2>
-            </button>
-          </label>
-          <label>
-            <button onClick={() => reset()}>
-              <h2>
-                Reset
-              </h2>
-            </button>
-            <br></br>
-          </label>
-          <br></br>
-          {Coner == 3 && Coneh == 1 && Cones == 4 && Coned == 1 && Conea_g  == 5 && Conea_o == 9 && ConeV == 2 && ConeU_g == 6 && Conehoa == 5 &&
-            <label>
-              <input
-                value={extratext}
-                onChange={e => {
-                  setExtratext(e.target.value)
-                  setK(Math.round(Conea_m))
-                }}
-                type="text"
-                onCopy={e => toast.info("There is a button for that!")}
-                onCut={e => toast.info("There is a button for that!")}
-                onPaste={e => toast("Too lazy to type?")}
-              />
-            </label>
-          }
-          <br></br>
-          {Coner == 3 && Coneh == 1 && Cones == 4 && Coned == 1 && Conea_g  == 5 && Conea_o == 9 && ConeV == 2 && ConeU_g == 6 && Conehoa == 5 &&
-            <label>
-              <br></br>
-              {BytetoInteger(extratext, k)
-              }
-              {//AscIItoText(BytetoInteger(extratext, k))
-              }
-            </label>
-          }
-          <hr />
+          <h1>Welcome to CEUCCC</h1>
+          <p>(<b>C</b>ompletely <b>E</b>xaggerated <b>U</b>nnecessary <b>C</b>omplicated <b>C</b>one <b>C</b>alculator)</p>
         </label>
+        <br></br>
+        <img src={cone} alt='Cone' />
+        <br></br>
+        <label>
+          <h2>Manual:</h2>
+          <p>
+            <i>Thinking: Hopefully this guy won't notice that i can't speak english very well.</i>
+            <br></br>
+            This calculator is at the moment <b>only for straight circular cones!</b>
+            <br></br>
+            It is enough to enter 2 values to calculate all data of the cone.
+            <br></br>
+            Unfortunately, there are some exceptions.
+            <br></br>
+            But first the <b>explanations of the symbols</b>.
+            <br></br>
+            <b>r</b> is the radius.
+            <br></br>
+            <b>h</b> is the height.
+            <br></br>
+            <b>s</b> is the length of the mantellinie.
+            <br></br>
+            <b>d</b> is the durchmesser.
+            <br></br>
+            <b>a<sub>g</sub> (a_g)</b> is the fächeninhalt of the grundfläche.
+            <br></br>
+            <b>a<sub>m</sub> (a_m)</b> is the flächeninhalt of the mantel.
+            <br></br>
+            <b>a<sub>o</sub> (a_o)</b> is the flächeninhalt of the whole oberfläche.
+            <br></br>
+            <b>V</b> is the volumen.
+            <br></br>
+            <b>U<sub>g</sub> (U_g)</b> is the Umfang of the grundfläche.
+            <br></br>
+            <b>φ</b> is the half opening winkel.
+            <br></br>
+            But now to the <b>exceptions</b>:
+            <br></br>
+            <h2>Exceptions:</h2>
+            <br></br>
+            First the cases where to values are given but aren't enough to calculate:
+            <br></br>
+            - a<sub>m</sub> and V
+            <br></br>
+            - a<sub>m</sub> and φ
+            <br></br>
+            - a<sub>o</sub> and V maybe
+            <br></br>
+            - a<sub>o</sub> and φ
+            <br></br>
+            - V and φ
+            <br></br>
+            - If Values are smaller than 0.
+            <br></br>
+            - At least 2 Values must be bigger than 0. 
+            <br></br>
+            - If only value is given, the values are calculated which are possible with 1 value.
+            <br></br>
+            - The values must fit to this formeln and it's ableitungen:
+            <br></br>
+            r = sqrt(s²-h²)
+            <br></br>
+            h = sqrt(s²-r²)
+            <br></br>
+            s = sqrt(h²+r²)
+            <br></br>
+            d = 2*r
+            <br></br>
+            a<sub>g</sub> = r² * PI
+            <br></br>
+            a<sub>m</sub> = r * s * PI
+            <br></br>
+            a<sub>o</sub> = a<sub>g</sub> + a<sub>m</sub> = r * PI * (r + s)
+            <br></br>
+            V = 1/3 * PI * r² * h = 1/3 * a<sub>g</sub> * h
+            <br></br>
+            U<sub>g</sub> = 2 * PI * r
+            <br></br>
+            φ = arcsin(r/s) = arctan(r/h)
+            <br></br>
+          </p>
+        </label>
+        <br></br>
+        <label>
+          <h2>Calculator:</h2>
+        </label>
+        <br></br>
+        <table>
+          <thead>
+            <tr>
+              <th>symbol</th>
+              <th>value</th>
+              <th>copy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>r = </td>
+              <td>
+                <input
+                  value={Coner}
+                  onChange={e => setConeR(e.target.value)}
+                  type="number"
+                  onCopy={e => toast.info("There is a button for that!")}
+                  onCut={e => toast.info("There is a button for that!")}
+                  onPaste={e => toast("Too lazy to type?")}
+                /> cm
+              </td>
+              <td>
+                <button onClick={() =>  navigator.clipboard.writeText(`r = ${Coner}`)}>
+                  Copy solution
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>h = </td>
+              <td>
+                <input
+                  value={Coneh}
+                  onChange={e => setConeH(e.target.value)}
+                  type="number"
+                  onCopy={e => toast.info("There is a button for that!")}
+                  onCut={e => toast.info("There is a button for that!")}
+                  onPaste={e => toast("Too lazy to type?")}
+                /> cm
+              </td>
+              <td>
+                <button onClick={() =>  navigator.clipboard.writeText(`h = ${Coneh}`)}>
+                  Copy solution
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>s = </td>
+              <td>
+                <input
+                  value={Cones}
+                  onChange={e => setConeS(e.target.value)}
+                  type="number"
+                  onCopy={e => toast.info("There is a button for that!")}
+                  onCut={e => toast.info("There is a button for that!")}
+                  onPaste={e => toast("Too lazy to type?")}
+                /> cm
+              </td>
+              <td>
+                <button onClick={() =>  navigator.clipboard.writeText(`s = ${Cones}`)}>
+                  Copy solution
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>d = </td>
+              <td>
+                <input
+                  value={Coned}
+                  onChange={e => setConeD(e.target.value)}
+                  type="number"
+                  onCopy={e => toast.info("There is a button for that!")}
+                  onCut={e => toast.info("There is a button for that!")}
+                  onPaste={e => toast("Too lazy to type?")}
+                /> cm
+              </td>
+              <td>
+                <button onClick={() =>  navigator.clipboard.writeText(`d = ${Coned}`)}>
+                  Copy solution
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>a<sub>g</sub> = </td>
+              <td>
+                <input
+                  value={Conea_g}
+                  onChange={e => setConeA_G(e.target.value)}
+                  type="number"
+                  onCopy={e => toast.info("There is a button for that!")}
+                  onCut={e => toast.info("There is a button for that!")}
+                  onPaste={e => toast("Too lazy to type?")}
+                /> cm²
+              </td>
+              <td>
+                <button onClick={() =>  navigator.clipboard.writeText(`a_g = ${Conea_g}`)}>
+                  Copy solution
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>a<sub>m</sub> = </td>
+              <td>
+                <input
+                  value={Conea_m}
+                  onChange={e => setConeA_M(e.target.value)}
+                  type="number"
+                  onCopy={e => toast.info("There is a button for that!")}
+                  onCut={e => toast.info("There is a button for that!")}
+                  onPaste={e => toast("Too lazy to type?")}
+                /> cm²
+              </td>
+              <td>
+                <button onClick={() =>  navigator.clipboard.writeText(`a_m = ${Conea_m}`)}>
+                  Copy solution
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>a<sub>o</sub> = </td>
+              <td>
+                <input
+                  value={Conea_o}
+                  onChange={e => setConeA_O(e.target.value)}
+                  type="number"
+                  onCopy={e => toast.info("There is a button for that!")}
+                  onCut={e => toast.info("There is a button for that!")}
+                  onPaste={e => toast("Too lazy to type?")}
+                /> cm²
+              </td>
+              <td>
+                <button onClick={() =>  navigator.clipboard.writeText(`a_o = ${Conea_o}`)}>
+                  Copy solution
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>V = </td>
+              <td>
+                <input
+                  value={ConeV}
+                  onChange={e => setConeV(e.target.value)}
+                  type="number"
+                  onCopy={e => toast.info("There is a button for that!")}
+                  onCut={e => toast.info("There is a button for that!")}
+                  onPaste={e => toast("Too lazy to type?")}
+                /> cm³
+              </td>
+              <td>
+                <button onClick={() =>  navigator.clipboard.writeText(`V = ${ConeV}`)}>
+                  Copy solution
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>U<sub>g</sub> = </td>
+              <td>
+                <input
+                  value={ConeU_g}
+                  onChange={e => setConeU_G(e.target.value)}
+                  type="number"
+                  onCopy={e => toast.info("There is a button for that!")}
+                  onCut={e => toast.info("There is a button for that!")}
+                  onPaste={e => toast("Too lazy to type?")}
+                /> cm
+              </td>
+              <td>
+                <button onClick={() =>  navigator.clipboard.writeText(`U_g = ${ConeU_g}`)}>
+                  Copy solution
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>φ = </td>
+              <td>
+                <input
+                  value={Conehoa}
+                  onChange={e => setConeHOA(e.target.value)}
+                  type="number"
+                  onCopy={e => toast.info("There is a button for that!")}
+                  onCut={e => toast.info("There is a button for that!")}
+                  onPaste={e => toast("Too lazy to type?")}
+                /> °
+              </td>
+              <td>
+                <button onClick={() =>  navigator.clipboard.writeText(`φ = ${Conehoa}`)}>
+                  Copy solution
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br></br>
+        <label>
+          <button onClick={() => navigator.clipboard.writeText(`r = ${Coner}, h = ${Coneh}, s = ${Cones}, d = ${Coned}, a_g = ${Conea_g}, a_m = ${Conea_m}, a_o = ${Conea_o}, V = ${ConeV}, U_g = ${ConeU_g}, φ = ${Conehoa}.`)}>
+            Copy all Values
+          </button>
+        </label>
+        <br></br>
+        <br></br>
+        <label>
+          <button onClick={() => {
+            toast.info("Calculator started.")
+            ConeCalculation()
+          }}>
+            <h2>
+              Calculate
+            </h2>
+          </button>
+        </label>
+        <label>
+          <button onClick={() => reset()}>
+            <h2>
+              Reset
+            </h2>
+          </button>
+          <br></br>
+        </label>
+        <br></br>
+        {Coner == 3 && Coneh == 1 && Cones == 4 && Coned == 1 && Conea_g  == 5 && Conea_o == 9 && ConeV == 2 && ConeU_g == 6 && Conehoa == 5 &&
+          <label>
+            <input
+              value={extratext}
+              onChange={e => {
+                setExtratext(e.target.value)
+                setK(Math.round(Conea_m))
+              }}
+              type="text"
+              onCopy={e => toast.info("There is a button for that!")}
+              onCut={e => toast.info("There is a button for that!")}
+              onPaste={e => toast("Too lazy to type?")}
+            />
+          </label>
+        }
+        <br></br>
+        {Coner == 3 && Coneh == 1 && Cones == 4 && Coned == 1 && Conea_g  == 5 && Conea_o == 9 && ConeV == 2 && ConeU_g == 6 && Conehoa == 5 &&
+          <label>
+            <br></br>
+            {BytetoInteger(extratext, k)
+            }
+            {//AscIItoText(BytetoInteger(extratext, k))
+            }
+          </label>
+        }
+        <hr />
       </div>
     </>
   );
