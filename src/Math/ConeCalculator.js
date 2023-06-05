@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { BytetoInteger } from './BytetoInteger';
 //import { UTF8toByte } from './UTF8toByte';
 //import { AscIItoText } from './AscIItoText';
+
 import React from 'react';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -11,7 +12,7 @@ import cone from './cone.png'; // Tell webpack this JS file uses this image
 
 import { pqformel, cardanischeformel } from './Mathprogramms.js';
 
-function ConeCalculation() {
+export function ConeCalculation() {
 setImpossible(false);
 if (isNaN(Coner) == true) {
 setConeR(0);
