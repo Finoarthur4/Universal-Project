@@ -12,38 +12,52 @@ import cone from './cone.png'; // Tell webpack this JS file uses this image
 
 import { pqformel, cardanischeformel } from './Mathprogramms.js';
 
-export function ConeCalculation() {
-setImpossible(false);
-if (isNaN(Coner) == true) {
-setConeR(0);
-}
-if (isNaN(Coneh) == true) {
-setConeH(0);
-}
-if (isNaN(Cones) == true) {
-setConeS(0);
-}
-if (isNaN(Coned) == true) {
-setConeD(0);
-}
-if (isNaN(Conea_g) == true) {
-setConeA_G(0);
-}
-if (isNaN(Conea_m) == true) {
-setConeA_M(0);
-}
-if (isNaN(Conea_o) == true) {
-setConeA_O(0);
-}
-if (isNaN(ConeV) == true) {
-setConeV(0);
-}
-if (isNaN(ConeU_g) == true) {
-setConeU_G(0);
-}
-if (isNaN(Conehoa) == true) {
-setConeHOA(0);
-}
+export function ConeCalculator() {
+  //Cone Values
+  const [Coner, setConeR] = useState(0);
+  const [Coneh, setConeH] = useState(0);
+  const [Cones, setConeS] = useState(0);
+  const [Coned, setConeD] = useState(0);
+  const [Conea_g, setConeA_G] = useState(0);
+  const [Conea_m, setConeA_M] = useState(0);
+  const [Conea_o, setConeA_O] = useState(0);
+  const [ConeV, setConeV] = useState(0);
+  const [ConeU_g, setConeU_G] = useState(0);
+  const [Conehoa, setConeHOA] = useState(0);
+
+  const [extratext, setExtratext] = useState("");
+  const [k, setK] = useState(0);
+
+  if (isNaN(Coner) == true) {
+    setConeR(0);
+  }
+  if (isNaN(Coneh) == true) {
+    setConeH(0);
+  }
+  if (isNaN(Cones) == true) {
+    setConeS(0);
+  }
+  if (isNaN(Coned) == true) {
+    setConeD(0);
+  }
+  if (isNaN(Conea_g) == true) {
+    setConeA_G(0);
+  }
+  if (isNaN(Conea_m) == true) {
+    setConeA_M(0);
+  }
+  if (isNaN(Conea_o) == true) {
+    setConeA_O(0);
+  }
+  if (isNaN(ConeV) == true) {
+    setConeV(0);
+  }
+  if (isNaN(ConeU_g) == true) {
+    setConeU_G(0);
+  }
+  if (isNaN(Conehoa) == true) {
+    setConeHOA(0);
+  }
 if (Coner > 0) {
 if (Coneh > 0) {
   ConeCaserh(Coner, Coneh);
@@ -783,7 +797,7 @@ if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
 function ConeCasehoa(_Conehoa) {
 toast.error("That isn't possible! rtfm!");
 }
-}
+
 
 
 function reset() {
@@ -798,22 +812,6 @@ setConeV(0);
 setConeU_G(0);
 setConeHOA(0);
 }
-
-export function ConeCalculator() {
-  //Cone Values
-  const [Coner, setConeR] = useState(0);
-  const [Coneh, setConeH] = useState(0);
-  const [Cones, setConeS] = useState(0);
-  const [Coned, setConeD] = useState(0);
-  const [Conea_g, setConeA_G] = useState(0);
-  const [Conea_m, setConeA_M] = useState(0);
-  const [Conea_o, setConeA_O] = useState(0);
-  const [ConeV, setConeV] = useState(0);
-  const [ConeU_g, setConeU_G] = useState(0);
-  const [Conehoa, setConeHOA] = useState(0);
-
-  const [extratext, setExtratext] = useState("");
-  const [k, setK] = useState(0);
 
   return (
     <>
