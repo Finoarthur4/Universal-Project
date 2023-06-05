@@ -112,8 +112,7 @@ export default function Mathprogramms() {
             <ToastContainer/>
             <hr />
             <label>
-                Select the programm you want to start.
-                <br></br>
+                Select the programm you want to start:
                 <select
                     value={mathprogramm}
                     onChange={e => setMathProgramm(e.target.value)}
