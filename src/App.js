@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 //It is better to push via Git Extensions, because of several back-ups
 
 //Math programms
-import ConeCalculator from './ConeCalculator';
+import ConeCalculator from './ConeCalculator.js';
 
 export function pqformel(p, q, mode) {
 if(mode === "+") {
