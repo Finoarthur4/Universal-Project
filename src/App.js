@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 //It is better to push via Git Extensions, because of several back-ups
 
 //Math
-import Mathprogramms from './Mathprogramms.js';
+import Mathprogramms from './Math/Mathprogramms.js';
 
 export default function Form() {
   const [programm, setProgramm] = useState();
@@ -20,6 +20,7 @@ export default function Form() {
       <ToastContainer />
       <label>
         Select the group of programms you want to see:
+        <br></br>
         <select
           value={programm}
           onChange={e => setProgramm(e.target.value)}
