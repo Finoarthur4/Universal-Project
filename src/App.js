@@ -11,6 +11,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
 //Math
 import Mathprogramms from './Math/Mathprogramms.js';
+//Games
+
+//Chat
+import ChatApp from './Chat/ChatApp.js';
 
 export default function Form() {
   const [programm, setProgramm] = useState();
@@ -32,7 +36,11 @@ export default function Form() {
         </select>
       </label>
       {programm === "Math" &&
-        <Mathprogramms/>
+        <Mathprogramms />
+      }
+
+      {programm === "Chat" &&
+        <ChatApp />
       }
     </>
   );
