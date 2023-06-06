@@ -14,7 +14,7 @@ import Mathprogramms from './Math/Mathprogramms.js';
 //Games
 
 //Chat
-import ChatApp from './Chat/ChatApp.js';
+
 
 export default function Form() {
   const [programm, setProgramm] = useState();
@@ -37,10 +37,6 @@ export default function Form() {
       </label>
       {programm === "Math" &&
         <Mathprogramms />
-      }
-
-      {programm === "Chat" &&
-        <ChatApp />
       }
     </>
   );
