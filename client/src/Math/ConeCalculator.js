@@ -1111,7 +1111,7 @@ setConeHOA(0);
         <label>
           <button onClick={() => {
             toast.info("Calculator started.")
-            ConeCalculation()
+            ConeCalculator()
           }}>
             <h2>
               Calculate
