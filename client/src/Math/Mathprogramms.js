@@ -109,7 +109,6 @@ export default function Mathprogramms() {
 
     return(
         <>
-            <ToastContainer/>
             <hr />
             <label>
                 Select the programm you want to start:
@@ -124,10 +123,10 @@ export default function Mathprogramms() {
                 </select>
             </label>
             {mathprogramm === "Cone Calculator" &&
-            <ConeCalculator/>
+                <ConeCalculator />
             }
             {mathprogramm === "Zylinder Calculator" &&
-            <label/>
+                <label/>
             }
         </>
     );

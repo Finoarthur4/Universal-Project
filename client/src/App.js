@@ -21,7 +21,6 @@ export default function Form() {
 
   return (
     <>
-      <ToastContainer />
       <label>
         Select the group of programms you want to see:
         <br></br>

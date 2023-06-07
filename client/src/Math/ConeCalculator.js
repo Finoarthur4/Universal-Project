@@ -759,58 +759,58 @@ function ConeCases(_Cones) {
 toast.error("That isn't possible! rtfm!");
 }
 function ConeCased(_Coned) {
-if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
-  var _Coner = (_Coned/2);
-  setConeR(_Coner);
-  console.log(`_Coner = ${_Coner}`);
-  console.log("ConeCaser");
-  ConeCaser(_Coner);
-}
+  if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+    var _Coner = (_Coned/2);
+    setConeR(_Coner);
+    console.log(`_Coner = ${_Coner}`);
+    console.log("ConeCaser");
+    ConeCaser(_Coner);
+  }
 }
 function ConeCasea_g(_Conea_g) {
-if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
-  var _Coner = (Math.sqrt(_Conea_g/Math.PI));
-  setConeR(_Coner);
-  console.log(`_Coner = ${_Coner}`);
-  console.log("ConeCaser");
-  ConeCaser(_Coner);
-}
+  if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+    var _Coner = (Math.sqrt(_Conea_g/Math.PI));
+    setConeR(_Coner);
+    console.log(`_Coner = ${_Coner}`);
+    console.log("ConeCaser");
+    ConeCaser(_Coner);
+  }
 }
 function ConeCasea_m(_Conea_m) {
-toast.error("That isn't possible! rtfm!");
+  toast.error("That isn't possible! rtfm!");
 }
 function ConeCasea_o(_Conea_o) {
-toast.error("That isn't possible! rtfm!");
+  toast.error("That isn't possible! rtfm!");
 }
 function ConeCaseV(_ConeV) {
-toast.error("That isn't possible! rtfm!");
+  toast.error("That isn't possible! rtfm!");
 }
 function ConeCaseU_g(_ConeU_g) {
-if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
-  var _Coner = (_ConeU_g/(2*Math.PI));
-  setConeR(_Coner);
-  console.log(`_Coner = ${_Coner}`);
-  console.log("ConeCaser");
-  ConeCaser(_Coner);
-}
+  if (Coner == null || Coner == 0 || isNaN(Coner) == true) {
+    var _Coner = (_ConeU_g/(2*Math.PI));
+    setConeR(_Coner);
+    console.log(`_Coner = ${_Coner}`);
+    console.log("ConeCaser");
+    ConeCaser(_Coner);
+  }
 }
 function ConeCasehoa(_Conehoa) {
-toast.error("That isn't possible! rtfm!");
+  toast.error("That isn't possible! rtfm!");
 }
 
 
 
-function reset() {
-setConeR(0);
-setConeH(0);
-setConeS(0);
-setConeD(0);
-setConeA_G(0);
-setConeA_M(0);
-setConeA_O(0);
-setConeV(0);
-setConeU_G(0);
-setConeHOA(0);
+function Conereset() {
+  setConeR(0);
+  setConeH(0);
+  setConeS(0);
+  setConeD(0);
+  setConeA_G(0);
+  setConeA_M(0);
+  setConeA_O(0);
+  setConeV(0);
+  setConeU_G(0);
+  setConeHOA(0);
 }
 
   return (
@@ -904,6 +904,8 @@ setConeHOA(0);
             <br></br>
           </p>
         </label>
+      </div>
+      <div>
         <br></br>
         <label>
           <h2>Calculator:</h2>
@@ -1119,7 +1121,10 @@ setConeHOA(0);
           </button>
         </label>
         <label>
-          <button onClick={() => reset()}>
+          <button onClick={() => {
+            toast.info("Reset Calculator.")
+            Conereset()
+          }}>
             <h2>
               Reset
             </h2>
